@@ -18,6 +18,6 @@ import matplotlib.pyplot as plt
 # import du fichier heart.txt avec pandas dans la variable df (df = DataFrame)
 df = pandas.read_csv( "stationnement-sur-voie-publique-stationnement-interdit.csv", sep = ';', header = 0 , low_memory=False)
 
+tdf=df[ ( df["ARROND"] < 21 ) & ( df[ "ARROND"] > 0) ].LONGUEUR_CALCULEE.groupby(df.ARROND).agg(['max','min'])
 
-tdf=df[ [ "ARROND", "LONGUEUR_CALCULEE" ]  ].groupby('ARROND').agg(['max','min'])
 print(tdf)
