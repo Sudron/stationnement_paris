@@ -21,5 +21,3 @@ df = pandas.read_csv( "stationnement-sur-voie-publique-stationnement-interdit.cs
 
 tdf=df[ [ "ARROND", "LONGUEUR_CALCULEE" ]  ].groupby('ARROND').agg(['max','min'])
 print(tdf)
-
-tdf
